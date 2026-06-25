@@ -179,3 +179,39 @@ Desarrollo y evidencias del proceso de actualización de la cuenta de almacenami
 ### Paso 12: Cerrar la interfaz del contenedor (Sin Imagen)
 * Se utilizó el ícono **X** en la esquina superior derecha para concluir el ejercicio y retornar al listado de contenedores.
 * **Evidencia:** ![Paso 12](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/12gen.png)
+
+# Laboratorio: Explore Azure Files
+
+Desarrollo y evidencias del proceso de creación de recursos de almacenamiento compartido basados en la nube y análisis de los métodos de conectividad multiplataforma.
+
+---
+
+## Desarrollo del Laboratorio y Evidencias
+
+### Paso 1: Navegar a la sección Classic file shares
+* En el panel de control izquierdo, bajo la sección **Data storage**, se seleccionó la opción **Classic file shares**.
+* Se constató que, debido a la habilitación previa del espacio de nombres jerárquico (Gen2), la administración se realiza bajo la categoría clásica.
+* **Evidencia:** ![Paso 1](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/1files.png)
+
+### Paso 2: Configurar los detalles básicos del recurso compartido
+* Se seleccionó el botón **＋ Classic file share**.
+* En la pestaña **Basics**, se asignó el nombre `files` y se mantuvo el nivel de acceso en la opción por defecto **Transaction optimized**.
+* **Evidencia:** ![Paso 2](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/2files.png)
+
+### Paso 3: Deshabilitar políticas de respaldo y confirmación
+* En la pestaña **Backup**, se desmarcó la opción **Enable backup** para optimizar el consumo del laboratorio.
+* Posteriormente, se procedió a la validación final y creación del recurso compartido.
+* **Evidencia:** ![Paso 3](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/3files.png)
+
+### Paso 4: Abrir el recurso compartido creado
+* Una vez completado el despliegue, se ingresó al panel de administración general del recurso compartido denominado `files`.
+* **Evidencia:** ![Paso 4](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/4files.png)
+
+### Paso 5: Revisar scripts de conectividad híbrida
+* Se seleccionó la opción **Connect** en la barra superior.
+* El panel lateral expuso las pestañas dedicadas para Windows, Linux y macOS, mostrando los scripts nativos necesarios para montar la unidad de red mediante el protocolo SMB.
+* **Evidencia:** ![Paso 5](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/5files.png)
+
+### Paso 6: Verificación en el listado principal
+* Se cerró el panel de conexión retornando a la vista general de la cuenta, verificando el estado activo y la cuota asignada del recurso compartido.
+* **Evidencia:** ![Paso 6](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/6files.png)
