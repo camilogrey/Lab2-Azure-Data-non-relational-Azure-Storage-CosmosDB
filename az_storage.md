@@ -215,3 +215,7 @@ Desarrollo y evidencias del proceso de creación de recursos de almacenamiento c
 ### Paso 6: Verificación en el listado principal
 * Se cerró el panel de conexión retornando a la vista general de la cuenta, verificando el estado activo y la cuota asignada del recurso compartido.
 * **Evidencia:** ![Paso 6](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/6files.png)
+
+### Paso 7: Clean up
+* Eliminacion del recurso.
+* **Evidencia:** ![Paso 7](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/Captura%20de%20pantalla%202026-06-25%20204303.png)
