@@ -123,4 +123,59 @@ Desarrollo y evidencias del ejercicio práctico para la creación de contenedore
 
 ### Paso 18: Retornar al panel principal
 * Se utilizó el ícono **X** en la parte superior derecha para cerrar la vista del contenedor y volver al listado general.
-* **Evidencia:** ![Paso 18](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/azblob18.png)
+**Evidencia:** ![Paso 18](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/azblob18.png)
+
+# Laboratorio: Explore Azure Data Lake Storage Gen2
+
+Desarrollo y evidencias del proceso de actualización de la cuenta de almacenamiento para habilitar el espacio de nombres jerárquico (*hierarchical namespace*).
+
+---
+
+## Desarrollo del Laboratorio y Evidencias
+
+### Paso 1: Descargar el segundo archivo JSON
+* Se descargó el archivo complementario `product2.json` en el equipo local.
+* **Evidencia:** ![Paso 1](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/1gen.png)
+
+### Paso 2: Acceder a la opción de actualización
+* En el menú lateral izquierdo de la cuenta de almacenamiento, bajo la sección **Settings**, se seleccionó **Data Lake Gen2 upgrade**.
+* **Evidencia:** ![Paso 2](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/2gen.png)
+
+### Paso 3: Ejecutar la actualización a Gen2
+* Se completaron los pasos de validación del asistente y se aplicó la actualización irreversible de la cuenta hacia capacidades de Data Lake Gen2.
+* **Evidencia:** ![Paso 3](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/3gen.png)
+
+### Paso 4: Validar persistencia en Storage browser
+* Tras la actualización, se navegó a **Storage browser** en la raíz del contenedor `data` para confirmar que el directorio `product_data` persistió correctamente.
+* **Evidencia:** ![Paso 4](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/4gen.png)
+
+### Paso 5: Confirmar integridad del blob previo
+* Se ingresó a la carpeta `product_data` y se comprobó que el archivo `product1.json` seguía disponible sin alteraciones.
+* **Evidencia:** ![Paso 5](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/5gen.png)
+
+### Paso 6: Abrir panel de carga
+* Se hizo clic en el botón **⤒ Upload** para abrir la pestaña lateral de carga de objetos.
+* **Evidencia:** ![Paso 6](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/6gen.png)
+
+### Paso 7: Seleccionar el nuevo archivo de datos
+* Se adjuntó el archivo local `product2.json` en el asistente de subida para añadirlo a la ruta actual.
+* **Evidencia:** ![Paso 7](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/7gen.png)
+
+### Paso 8: Confirmar coexistencia de archivos
+* Tras finalizar la carga, se validó que ambos archivos (`product1.json` y `product2.json`) coexisten dentro del mismo directorio.
+* **Evidencia:** ![Paso 8](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/8gen.png)
+
+### Paso 9: Regresar al menú Containers
+* En la sección **Data storage** del panel de control izquierdo, se seleccionó nuevamente la opción general de **Containers**.
+* **Evidencia:** ![Paso 9](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/9gen.png)
+
+### Paso 10: Inspeccionar la vista del contenedor jerárquico
+* Se abrió el contenedor `data` para visualizar la estructura real de directorios ahora soportada por la cuenta de almacenamiento.
+* **Evidencia:** ![Paso 10](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/10gen.png)
+
+### Paso 11: Verificar opciones avanzadas de carpeta (Sin Imagen)
+* Se interactuó con el menú de tres puntos (**...**) a la derecha del directorio. Al habilitar el espacio de nombres jerárquico, se verificó la disponibilidad de herramientas reales de gestión como renombrar rutas y configurar permisos a nivel de carpeta (**Manage ACL**).
+* **Evidencia:** ![Paso 11](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/11gen.png)
+### Paso 12: Cerrar la interfaz del contenedor (Sin Imagen)
+* Se utilizó el ícono **X** en la esquina superior derecha para concluir el ejercicio y retornar al listado de contenedores.
+* **Evidencia:** ![Paso 12](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/12gen.png)
