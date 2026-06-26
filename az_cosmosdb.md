@@ -101,3 +101,103 @@ A lo largo de este procedimiento, puedes cerrar de forma segura cualquier ventan
   
 * > **Evidencia del paso 4:**
 > ![Verificación de la creación exitosa del contenedor](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/4Cosm.png)
+
+# Laboratorio: Visualizar y crear elementos en Azure Cosmos DB
+
+---
+
+### Paso 1: Explorar los elementos existentes (Items)
+* En la interfaz de **Data Explorer**, despliega la base de datos `SampleDB` y expande el contenedor `SampleContainer`.
+* Haz clic en la sección **Items** para listar los registros almacenados en el contenedor.
+* Selecciona cualquiera de los elementos de la lista para visualizar su representación en formato estructurado JSON en el panel de lectura derecho. Cada elemento representa un producto con un `id` único y propiedades específicas.
+
+> **Evidencia del paso 1:**
+> ![Visualización de ítems y estructura JSON](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/comos1.png)
+
+---
+
+### Paso 2: Inicializar la creación de un nuevo elemento
+* En la barra de herramientas superior de la página, haz clic en la opción **New Item** (Nuevo elemento) para abrir un documento JSON en blanco con una estructura base predeterminada.
+
+> **Evidencia del paso 2:**
+> ![Creación de un nuevo ítem en blanco](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/comos2.png)
+
+---
+
+### Paso 3: Modificar y guardar el documento JSON
+* Reemplaza el bloque de texto en el editor con la información técnica del siguiente producto estructurado y presiona el botón **Save** (Guardar) de la barra superior:
+
+json
+{
+    "name": "Road Helmet,45",
+    "id": "123456789",
+    "categoryId": "123456789",
+    "SKU": "AB-1234-56",
+    "description": "The product called \"Road Helmet,45\" ",
+    "price": 48.74
+}
+
+> **Evidencia del paso 3:**
+> ![Reemplazo de item JSON](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/comos3.png)
+
+> ![Inclusión de Metadata automatica en el nuevo item JSON](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/comos3.1.png)
+
+# Laboratorio: Realizar consultas en la base de datos de Azure Cosmos DB
+
+---
+
+### Paso 1: Abrir el editor de consultas SQL
+* En la sección **Data Explorer** de la cuenta de Cosmos DB (`cosmos100`), despliega tu base de datos y contenedor.
+* Selecciona el icono **New SQL Query** (Nueva consulta SQL) en la barra de herramientas superior para abrir una pestaña de ejecución de comandos.
+
+> **Evidencia del paso 1:**
+> ![Abrir pestaña de consultas SQL](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/1.png)
+
+---
+
+### Paso 2: Revisar la consulta por defecto
+* Al inicializar la ventana, se posterior o automáticamente mostrará la consulta estructurada por defecto del motor NoSQL: `SELECT * FROM c`.
+* El sistema queda listo en espera de la ejecución para mapear los documentos estructurados del contenedor.
+
+> **Evidencia del paso 2:**
+> ![Editor de consultas con comando por defecto](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/2.png)
+
+---
+
+### Paso 3: Ejecutar la consulta base y revisar los resultados
+* Haz clic en el botón **Ejecutar la consulta** (Execute Query).
+* En el panel inferior **Results**, analiza la respuesta del motor. El resultado devuelve un array con la representación JSON completa de todos los elementos almacenados dentro de `SampleContainer`.
+
+> **Evidencia del paso 3:**
+> ![Resultados de la consulta general NoSQL](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/3.png)
+
+---
+
+### Paso 4: Modificar la consulta para aplicar un filtro de texto
+* Edita el código de la pestaña de ejecución SQL para buscar términos específicos dentro de los documentos utilizando la función condicional `CONTAINS`:
+
+sql
+SELECT *
+FROM c
+WHERE CONTAINS(c.name, "Helmet")
+
+> **Evidencia del paso 4:**
+> ![Resultados de la consulta general NoSQL](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/4.png)
+
+
+### Paso 5: Ejecutar la consulta filtrada y validar respuestas
+* Comprueba los documentos JSON resultantes en el panel inferior; ahora el sistema solo expone las entidades cuyo atributo de nombre contiene explícitamente la palabra "Helmet" (por ejemplo, el producto "Sport-100 Helmet, Black").
+
+> **Evidencia del paso 5:**
+> ![Ejecutar la consulta](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/5.png)
+
+
+### Paso 6: Cerrar el editor de consultas
+* Finaliza la sesión de pruebas cerrando la pestaña del editor SQL en el portal de Azure presionando la 'X' de la pestaña o el botón de descartar cambios.
+
+> **Evidencia del paso 6:**
+> ![Resultados de la consulta general NoSQL](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/6.png)
+
+### Paso 7: Eliminación del recurso
+> **Evidencia del paso 7:**
+> ![Eliminacion del recurso](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/7.png)
