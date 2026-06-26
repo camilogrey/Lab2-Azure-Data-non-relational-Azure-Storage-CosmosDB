@@ -55,7 +55,49 @@ Una vez validados todos los campos requeridos, haz clic en el botón **Review + 
 > ![Validación exitosa del esquema de Cosmos DB](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/4cosmo.png)
 
 ---
+# Laboratorio: Crear una base de datos de ejemplo en Azure Cosmos DB
 
-### Paso 5: Implementación del recurso
+A lo largo de este procedimiento, puedes cerrar de forma segura cualquier ventana de sugerencias o "tips" que se muestren automáticamente en el portal.
+
+---
+
+### Paso 1: Acceder al Explorador de Datos (Data Explorer)
+* En el panel de navegación izquierdo de tu nueva cuenta de Azure Cosmos DB, localiza y selecciona la opción **Data Explorer**.
+
+> **Evidencia del paso 1:**
+> ![Acceso al Data Explorer](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/1Cosm.png)
+
+---
+
+### Paso 2: Iniciar el Asistente de Inicio Rápido
+* Dentro de la interfaz principal de Data Explorer, haz clic en el botón central llamado **Launch quick start** (Iniciar inicio rápido).
+
+* **Nota técnica:** La función *Quick start* crea automáticamente una base de datos operativa, un contenedor y un conjunto de datos ficticios de ejemplo. Esto te permite practicar la inserción y consulta de elementos JSON de inmediato, sin la necesidad de diseñar un esquema estructural desde cero.
+
+> **Evidencia del paso 2:**
+> ![Iniciar Quick Start](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/2Cosm.png)
+
+---
+
+### Paso 3: Revisar y confirmar los parámetros del contenedor
+* En el panel lateral derecho **New Container**, revisa las configuraciones preestablecidas de manera automática:
+    * **Database id:** `SampleDB`
+    * **Container id:** `SampleContainer`
+    * **Partition key:** `/categoryId`
+* Haz clic en **OK** para confirmar el aprovisionamiento. Si aparece un tutorial guiado flotante a un costado, puedes avanzar con *Next* o cerrarlo directamente presionando **OK** para continuar.
+
+* **¿Qué es una clave de partición (Partition Key)?** Al estructurar un contenedor, Azure Cosmos DB requiere una propiedad específica de tus datos (como `categoryId`) para agrupar lógicamente los elementos relacionados. Cosmos DB distribuye estos grupos de manera interna a través del almacenamiento y cómputo subyacente para garantizar que la base de datos mantenga bajas latencias a gran escala. En proyectos reales, elegir una clave con alta cardinalidad (muchos valores distintos) y que sea frecuentemente utilizada en los filtros de tus consultas es una de las decisiones de diseño arquitectónico más críticas.
+
+> **Evidencia del paso 3:**
+> ![Aprovisionamiento automático de SampleDB y SampleContainer](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/3Cosm.png)
+
+---
+
+### Paso 4: Monitorear el estado de la creación e Implementación del recurso
+* Observa la barra de estado y notificaciones en el panel inferior de la pantalla.
+* Espera aproximadamente un minuto hasta que el sistema confirme que la base de datos `SampleDB` y su respectivo contenedor `SampleContainer` han sido creados e indexados correctamente.
 * Espera unos minutos a que el portal de Azure complete el despliegue físico de la infraestructura en la región seleccionada.
 * Una vez finalizado el proceso de aprovisionamiento, haz clic en el botón **Go to resource** (Ir al recurso) para acceder al panel de control de tu nueva cuenta de Azure Cosmos DB.
+  
+* > **Evidencia del paso 4:**
+> ![Verificación de la creación exitosa del contenedor](https://github.com/camilogrey/Lab2-Azure-Data-non-relational-Azure-Storage-CosmosDB/blob/main/4Cosm.png)
